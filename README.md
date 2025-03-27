@@ -1,16 +1,10 @@
-# VerificadorCPF
-
-//Luiz Miguel Silvino, Matheus Alexandre Santos, Luiz Borba e  Carlos 
-
-
-#include <iostream>
-using namespace std;
-
-int main(){
+    #include <iostream>
+    using namespace std;
+    
+    int main(){
     int cpf, cpf_final;
     int dig1, dig2, dig3, dig4, dig5, dig6, dig7, dig8, dig9;
     int soma_verif1, dig_verif1, dig_verif2;
-    
 
     cout<<"CPF: ";
     cin>>cpf;
