@@ -1,62 +1,45 @@
-    #include <iostream>
-    using namespace std;
-    
-    int main(){
-    int cpf, cpf_final;
-    int dig1, dig2, dig3, dig4, dig5, dig6, dig7, dig8, dig9;
-    int soma_verif1, dig_verif1, dig_verif2;
+# Validador de CPF
 
-    cout<<"CPF: ";
-    cin>>cpf;
-    
-    cpf_final = cpf;
+## Descrição
+Este é um programa desenvolvido em C++ para a disciplina de **Algoritmos e Programação 1** da **Universidade do Vale do Itajaí (UNIVALI), campus Itajaí**. O objetivo do programa é gerar os dígitos verificadores de um CPF a partir dos primeiros 8 ou 9 dígitos informados pelo usuário.
 
+## Autores
+O projeto foi desenvolvido em grupo pelos seguintes alunos:
+- Luiz Miguel Silvino
+- Matheus Alexandre Santos
+- Luiz Borba
+- Carlos
 
-    // colocar um if de inicio para verificar a quantidade dos 9 primeiros digitos 
-    if (cpf < 10000000 or cpf > 999999999){ 
-        cout<<"cpf inválido";
+## Como funciona?
+1. O usuário insere um CPF com **8 ou 9 dígitos**.
+2. O programa valida se a quantidade de dígitos está correta.
+3. Se válido, o programa separa os dígitos e calcula os dois dígitos verificadores.
+4. Os dígitos verificadores são adicionados ao CPF.
+5. O programa exibe o CPF completo e informa se ele é válido.
 
-        return 0 ;
-    }
-    
-    // separação da var int cpf
-    dig9 = cpf % 10;
-    cpf = cpf/10;
-    dig8 = cpf % 10;
-    cpf = cpf/10;
-    dig7 = cpf % 10;
-    cpf = cpf/10;
-    dig6 = cpf % 10;
-    cpf = cpf/10;
-    dig5 = cpf % 10;
-    cpf = cpf/10;
-    dig4 = cpf % 10;
-    cpf = cpf/10;
-    dig3 = cpf % 10;
-    cpf = cpf/10;
-    dig2 = cpf % 10;
-    cpf = cpf/10;
-    dig1 = cpf % 10;
-    cpf = cpf/10;
+## Como compilar e executar?
+Para compilar e rodar o programa, utilize um compilador C++ como `g++`. No terminal, execute os seguintes comandos:
 
-    // verificação do primeiro digito
-    soma_verif1 = ((dig1 *  10) + (dig2 * 9) + (dig3 * 8) + (dig4 * 7) + (dig5 * 6) + (dig6 * 5) + (dig7 * 4) + (dig8 * 3) + (dig9 * 2)) % 11;
-    if (soma_verif1 < 2) {
-        dig_verif1 = 0;
-     }else {
-        dig_verif1 = 11 - soma_verif1;
-        };
-    
-    // verificação do segundo digito
-    soma_verif1 = ((dig1 * 11) + (dig2 * 10) + (dig3 * 9) + (dig4 * 8) + (dig5 * 7) + (dig6 * 6) + (dig7 * 5) + (dig8 * 4) + (dig9 * 3) + (dig_verif1*2)) % 11;
-        if (soma_verif1 < 2) {
-        dig_verif2 = 0;
-     }else {
-        dig_verif2 = 11 - soma_verif1;
-        };
-        
-    cout << cpf_final<< '-' << dig_verif1<< dig_verif2 <<endl;
+```sh
+# Compilar
+g++ -o validador_cpf validador_cpf.cpp
 
-    cout<<"cpf válido";
-    
-}
+# Executar
+./validador_cpf
+```
+
+## Estrutura do Código
+O programa segue a seguinte lógica:
+1. Recebe a entrada do usuário e verifica se o CPF tem 8 ou 9 dígitos.
+2. Separa cada dígito individualmente.
+3. Calcula os dois dígitos verificadores usando a fórmula padrão do CPF.
+4. Adiciona os dígitos verificadores ao final do CPF.
+5. Exibe o CPF completo e indica se ele é válido.
+
+## Requisitos
+- Compilador C++ (g++, Clang, MSVC, etc.)
+- Terminal para execução do programa
+
+---
+Desenvolvido para fins acadêmicos na UNIVALI - Itajaí.
+
