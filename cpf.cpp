@@ -1,10 +1,4 @@
-/*
-Alunos:
-    Luiz Miguel Silvino
-    Matheus Alexandre Santos
-    Luiz Borba
-    Carlos
-*/
+//Luiz Miguel Silvino, Matheus Alexandre Santos, Luiz Borba e  Carlos 
 
 
 #include <iostream>
@@ -25,7 +19,7 @@ int main(){
 
     // If para verificação da quantidade de dígitos do CPF informado. Caso tenha menos de 8 ou mais de 9 dígitos, o programa é encerrado.
     if (cpf < 10000000 or cpf > 999999999){ 
-        cout<<"cpf inválido"<<endl;
+        cout<<"cpf inválido";
 
         return 0 ;
     }
@@ -52,7 +46,7 @@ int main(){
 
 
     // Algorítimo para formar o primeiro dígito verificador
-    soma_verif = (dig1*0 + dig2*9 + dig3*8 + dig4*7 + dig5*6 + dig6*5 + dig7*4 + dig8*3 + dig9*2) % 11;
+    soma_verif = (dig1*10 + dig2*9 + dig3*8 + dig4*7 + dig5*6 + dig6*5 + dig7*4 + dig8*3 + dig9*2) % 11;
     if (soma_verif < 2) {
         dig_verif1 = 0;
      }else {
@@ -75,7 +69,7 @@ int main(){
     if (cpf_final < 10000000000){
         cout << endl << "0" << cpf_final;
     }else{
-        cout << endl << cpf_final ;
+    cout << endl << cpf_final ;
         }
 
     cout << endl<<"cpf válido";
