@@ -72,6 +72,12 @@ int main(){
     cout << endl << cpf_final ;
         }
 
+         // Formata o CPF com pontos e traço
+    cout << endl << dig1 << dig2 << dig3 << "."
+         << dig4 << dig5 << dig6 << "."
+         << dig7 << dig8 << dig9 << "-"
+         << dig_verif1 << dig_verif2;
+
     cout << endl<<"cpf válido";
     
     
